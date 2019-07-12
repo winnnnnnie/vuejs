@@ -13,7 +13,7 @@
 <div id="lab">
     First Name: <input type="text" v-model='firstName' > <br>
     Last Name: <input type="text" v-model='lastName' > <hr>
-    Full Name: {{ fullName }}
+    Full Name: {{ fullName | dateFormatFilter('yyyy-mm-dd') }}
 </div>
 
 <script>
@@ -38,7 +38,7 @@
             }
         },
         filter:{
-            
+
         }
         
     })
