@@ -244,6 +244,11 @@ $(function () {
 
 })  // end of init.
 
+// $get("url",plan);
+$.get("/home,news",function (e){
+    app.newsList = JSON.parse(e);
+})
+
 </script>
 
 </body>
