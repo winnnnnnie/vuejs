@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab</title>
+    <title>Demo</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -12,9 +12,7 @@
 </head>
 
 <body>
-
     <div class="container" id="lab">
-
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
@@ -24,31 +22,49 @@
             </div>
         </div>
 
+
         <form class="form-horizontal">
             <fieldset>
-                <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="question">請輸入問題:</label>
+
+                    <label for="col-md-4 control-lab" for="question">輸入問題</label>
                     <div class="col-md-4">
-                        <input id="question" name="question" type="text" placeholder="" class="form-control input-md">
+                        <input v-model="question" v-on:input="questionChanged()" id="question" name="question"
+                            type="text" placeholder="" class="form-control input-md">
                         <span class="help-block">問題請以問號結尾</span>
+
                     </div>
                 </div>
             </fieldset>
         </form>
-
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <h2>Yes</h2>
-                <img src="https://yesno.wtf/assets/yes/0-c44a7789d54cbdcad867fb7845ff03ae.gif">
+                <h2>{{answer}}</h2>
+                <img v-bind:src="image">
             </div>
         </div>
-
     </div>
+    <script>
+        labApp = new Vue({
+            el: "lab",
+            data: {
+                question: "",
+                answer: "",
+                image: ""
 
-    <script></script>
+            },
+            methods: {
+                questionChanged:function(){
 
+                }
+            }
+
+        })
+
+
+
+    </script>
 </body>
 
 </html>
